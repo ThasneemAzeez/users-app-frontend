@@ -21,6 +21,11 @@ const Signup = () => {
             "confirmpassword":""
         }
     )
+    const[password,confirmpassword]=useState({
+            
+    })
+    
+    
     const inputHandler=(event)=>{
         setdata({...data,[event.target.name]:event.target.value})
     }
@@ -34,11 +39,17 @@ const Signup = () => {
             } else {
                 alert("failed")
             }
+            if (data.password == data.confirmpassword) {
+                alert("match")
+            } else {
+                alert("not match")
+            }
 
             
            
         }
     ).catch().finally()
+        
     }
   return (
     <div>
@@ -74,21 +85,22 @@ const Signup = () => {
                         <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                             <label htmlFor="" className="form-label">District</label>
                             <select  id="" className="form-control" name='district' value={data.district} onChange={inputHandler}>
-                                <option value="">Alappuzha</option>
-                                <option value="">Ernakulam</option>
-                                <option value="">Idukki</option>
-                                <option value="">Kannur</option>
-                                <option value="">Kasaragod</option>
-                                <option value="">Kollam</option>
-                                <option value="">Kottayam</option>
-                                <option value="">Kozhikode</option>
-                                <option value="">Malappuram</option>
-                                <option value="">Palakkad</option>
-                                <option value="">Pathanamthitta</option>
-                                <option value="">Thiruvananthapuram</option>
-                                <option value="">Thrissur</option>
-                                <option value="">Wayanad</option>
+                            <option value="alappuzha">Alappuzha</option>
+                                <option value="Ernakulam">Ernakulam</option>
+                                <option value="idukki">Idukki</option>
+                                <option value="kannur">Kannur</option>
+                                <option value="kasaragod">Kasaragod</option>
+                                <option value="kollam">Kollam</option>
+                                <option value="kottayam">Kottayam</option>
+                                <option value="kozhikode">Kozhikode</option>
+                                <option value="malappuram">Malappuram</option>
+                                <option value="palakkad">Palakkad</option>
+                                <option value="pathanamthitta">Pathanamthitta</option>
+                                <option value="thiruvananthapuram">Thiruvananthapuram</option>
+                                <option value="thrissur">Thrissur</option>
+                                <option value="wayanad">Wayanad</option>
                             </select>
+                            
                         </div>
                         <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                             <label htmlFor="" className="form-label">Place</label>
@@ -108,7 +120,7 @@ const Signup = () => {
                         </div>
                         <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                             <label htmlFor="" className="form-label">Confirm password</label>
-                            <input type="text" className="form-control" name='confirmpassword' value={data.confirmpassword} onChange={inputHandler}/>
+                            <input type="password" className="form-control" name='confirmpassword' value={data.confirmpassword} onChange={inputHandler}/>
                         </div>
                         <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                             <button className="btm btn-success" onClick={readValue}>Sign Up</button>

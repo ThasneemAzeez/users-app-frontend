@@ -22,7 +22,7 @@ const LoginPage = () => {
         console.log(data)
         axios.post("http://localhost:8080/addlogin",data).then((response)=>{
             console.log(response.data)
-            if (response.data.status=="success") {
+            if (response.data.status=="success" ) {
                 alert("success")
             } else {
                 alert("error")
